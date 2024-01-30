@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SistemaListadoProducto.BLL\SistemaListadoProducto.BLL.csproj" />
+    <ProjectReference Include="..\SistemaListadoProducto.Entity\SistemaListadoProducto.Entity.csproj" />
+    <ProjectReference Include="..\SistemaListadoProducto.IOC\SistemaListadoProducto.IOC.csproj" />
+  </ItemGroup>
+
+</Project>
