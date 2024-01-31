@@ -8,8 +8,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SistemaListadoProducto.DAL.DBContext;
 using Microsoft.EntityFrameworkCore;
-//using SistemaListadoProducto.DAL.Implementacion;
-//using SistemaListadoProducto.DAL.Interfaces;
+using SistemaListadoProducto.DAL.Implementacion;
+using SistemaListadoProducto.DAL.Interfaces;
+using SistemaListadoProducto.BLL.Interfaces;
+using SistemaListadoProducto.BLL.Implementacion;
 //using SistemaListadoProducto.BLL.Implementacion;
 //using SistemaListadoProducto.BLL.Interfaces;
 
@@ -23,6 +25,13 @@ namespace SistemaListadoProducto.IOC
             {
                 options.UseSqlServer(Configuration.GetConnectionString("CadenaSQL"));
             });
+
+            services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
+            services.AddScoped<IUtilidadesService, UtilidadesService>();
+
+            services.AddScoped<IUsuarioService, UsuarioService>();
+
         }
     }
 }
