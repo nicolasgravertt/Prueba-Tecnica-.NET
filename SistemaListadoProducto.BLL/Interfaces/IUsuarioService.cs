@@ -10,9 +10,9 @@ namespace SistemaListadoProducto.BLL.Interfaces
     public interface IUsuarioService
     {
         Task<List<Usuario>> Lista();
-        Task<Usuario> Crear(Usuario entidad, Stream foto, string nombreFoto = "", String urlPlantillaCorreo = "");
+        Task<Usuario> Crear(Usuario entidad);
 
-        Task<Usuario> Editar(Usuario entidad, Stream foto, string nombreFoto = "");
+        Task<Usuario> Editar(Usuario entidad);
 
         Task<bool> Eliminar(int idUsuario);
 
@@ -24,6 +24,6 @@ namespace SistemaListadoProducto.BLL.Interfaces
 
         Task<bool> CambiarClave(int idUsuario,string claveActual, string claveNueva);
 
-        Task<bool> RestablecerClave(string correo, string urlPlantillaCorreo)
+        Task<bool> RestablecerClave(string correo, string urlPlantillaCorreo);
     }
 }

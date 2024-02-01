@@ -1,0 +1,3 @@
+﻿const MODELO_BASE = {
+
+}

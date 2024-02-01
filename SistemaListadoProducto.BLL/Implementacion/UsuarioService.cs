@@ -30,7 +30,7 @@ namespace SistemaListadoProducto.BLL.Implementacion
             IQueryable<Usuario> query = await _repositorio.Consultar();
             return query.ToList();
         }
-        public async Task<Usuario> Crear(Usuario entidad, Stream foto, string nombreFoto = "", string urlPlantillaCorreo = "")
+        public async Task<Usuario> Crear(Usuario entidad)
         {
             Usuario usuario_existe = await _repositorio.Obtener(u => u.Correo == entidad.Correo);
             if (usuario_existe != null)
@@ -58,7 +58,7 @@ namespace SistemaListadoProducto.BLL.Implementacion
                 throw;
             }
         }
-        public async Task<Usuario> Editar(Usuario entidad, Stream foto, string nombreFoto = "")
+        public async Task<Usuario> Editar(Usuario entidad)
         {
             Usuario usuario_existe = await _repositorio.Obtener(u => u.Correo == entidad.Correo && u.IdUsuario != entidad.IdUsuario);
             if (usuario_existe != null)
