@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SistemaListadoProducto.BLL.Interfaces
 {
-    internal interface IProductoService
+    public interface IProductoService
     {
         Task<List<Producto>> Lista();
         Task<Producto> Crear(Producto entidad);

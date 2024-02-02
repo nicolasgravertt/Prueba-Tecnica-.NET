@@ -12,8 +12,6 @@ using SistemaListadoProducto.DAL.Implementacion;
 using SistemaListadoProducto.DAL.Interfaces;
 using SistemaListadoProducto.BLL.Interfaces;
 using SistemaListadoProducto.BLL.Implementacion;
-//using SistemaListadoProducto.BLL.Implementacion;
-//using SistemaListadoProducto.BLL.Interfaces;
 
 namespace SistemaListadoProducto.IOC
 {
@@ -31,6 +29,10 @@ namespace SistemaListadoProducto.IOC
             services.AddScoped<IUtilidadesService, UtilidadesService>();
 
             services.AddScoped<IUsuarioService, UsuarioService>();
+
+            services.AddScoped<ICategoriaService, CategoriaService>();
+
+            services.AddScoped<IProductoService, ProductoService>();
 
         }
     }

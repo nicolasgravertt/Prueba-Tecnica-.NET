@@ -11,7 +11,6 @@ namespace SistemaListadoProducto.AplicacionWeb.Utilidades.AutoMapper
         {
             #region Categoria
             CreateMap<Categoria, VMCategoria>().ReverseMap();
-            CreateMap<VMCategoria, Categoria> ().ReverseMap();
             #endregion Categoria
             #region Usuario
             CreateMap<Usuario, VMUsuario>().ReverseMap();
