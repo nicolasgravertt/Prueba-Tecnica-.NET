@@ -80,6 +80,9 @@ namespace SistemaListadoProducto.BLL.Implementacion
                 {
                     throw new TaskCanceledException("La categoria no existe");
                 }
+
+                bool respuesta = await _repositorio.Eliminar(categoria_encontrada);
+
                 return true;
             }
             catch (Exception ex)
