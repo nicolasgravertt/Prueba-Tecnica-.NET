@@ -6,9 +6,11 @@ using SistemaListadoProducto.AplicacionWeb.Models.ViewModel;
 using SistemaListadoProducto.AplicacionWeb.Utilidades.Response;
 using SistemaListadoProducto.BLL.Interfaces;
 using SistemaListadoProducto.Entity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SistemaListadoProducto.AplicacionWeb.Controllers
 {
+    [Authorize]
     public class UsuarioController : Controller
     {
         private readonly IUsuarioService _usuarioService;
