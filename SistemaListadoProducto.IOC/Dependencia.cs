@@ -34,6 +34,8 @@ namespace SistemaListadoProducto.IOC
 
             services.AddScoped<IProductoService, ProductoService>();
 
+            services.AddScoped<IFireBaseService, FireBaseService>();
+
         }
     }
 }

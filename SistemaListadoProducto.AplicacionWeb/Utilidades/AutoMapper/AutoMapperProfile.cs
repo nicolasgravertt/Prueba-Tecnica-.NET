@@ -16,7 +16,21 @@ namespace SistemaListadoProducto.AplicacionWeb.Utilidades.AutoMapper
             CreateMap<Usuario, VMUsuario>().ReverseMap();
             #endregion Usuario
             #region Producto
-            CreateMap<Producto, VMProducto>().ReverseMap();
+            CreateMap<Producto, VMProducto>().ForMember(destino =>
+                destino.NombreCategoria,
+                opt => opt.MapFrom(origen => origen.IdCategoriaNavigation.Descripcion)
+            ).ForMember(destino =>
+                destino.Precio,
+                opt => opt.MapFrom(origen => Convert.ToString(origen.Precio.Value, new CultureInfo("es-MX")))
+            );
+
+            CreateMap<VMProducto,Producto>().ForMember(destino =>
+                destino.IdCategoriaNavigation,
+                opt => opt.Ignore()
+            ).ForMember(destino =>
+                destino.Precio,
+                opt => opt.MapFrom(origen => Convert.ToDecimal(origen.Precio, new CultureInfo("es-MX")))
+            );
             #endregion Producto
         }
     }

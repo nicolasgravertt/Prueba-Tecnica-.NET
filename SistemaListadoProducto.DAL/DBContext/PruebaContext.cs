@@ -43,7 +43,7 @@ public partial class PruebaContext : DbContext
 
         modelBuilder.Entity<Producto>(entity =>
         {
-            entity.HasKey(e => e.IdProducto).HasName("PK__Producto__07F4A13239716E03");
+            entity.HasKey(e => e.IdProducto).HasName("PK__Producto__07F4A1326D2217F0");
 
             entity.ToTable("Producto");
 
@@ -52,23 +52,30 @@ public partial class PruebaContext : DbContext
                 .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("descripcion");
+            entity.Property(e => e.CodigoBarra)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("codigoBarra");
             entity.Property(e => e.FechaRegistro)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime")
                 .HasColumnName("fechaRegistro");
             entity.Property(e => e.IdCategoria).HasColumnName("idCategoria");
-            entity.Property(e => e.IsActive).HasColumnName("isActive");
+            entity.Property(e => e.esActivo).HasColumnName("esActivo");
             entity.Property(e => e.Marca)
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("marca");
-            entity.Property(e => e.Nombre)
-                .HasMaxLength(100)
-                .IsUnicode(false)
-                .HasColumnName("nombre");
+            entity.Property(e => e.Stock)
+                .HasColumnType("int")
+                .HasColumnName("stock");
             entity.Property(e => e.Precio)
                 .HasColumnType("decimal(10, 2)")
                 .HasColumnName("precio");
+            entity.Property(e => e.NombreImagen)
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasColumnName("nombreImagen");
             entity.Property(e => e.UrlImagen)
                 .HasMaxLength(500)
                 .IsUnicode(false)
@@ -76,7 +83,7 @@ public partial class PruebaContext : DbContext
 
             entity.HasOne(d => d.IdCategoriaNavigation).WithMany(p => p.Productos)
                 .HasForeignKey(d => d.IdCategoria)
-                .HasConstraintName("FK__Producto__idCate__3C69FB99");
+                .HasConstraintName("FK__Producto__idCate__4CA06362");
         });
 
         modelBuilder.Entity<Usuario>(entity =>
@@ -102,6 +109,25 @@ public partial class PruebaContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("nombre");
+        });
+
+        modelBuilder.Entity<Configuracion>(entity =>
+        {
+            entity.HasKey(e => e.IdConfiguracion).HasName("PK__Configur__CEF3A787AE83853D");
+
+            entity.Property(e => e.IdConfiguracion).HasColumnName("idConfiguracion");
+            entity.Property(e => e.Recurso)
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasColumnName("recurso");
+            entity.Property(e => e.Valor)
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasColumnName("valor");
+            entity.Property(e => e.Propiedad)
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasColumnName("propiedad");
         });
 
         OnModelCreatingPartial(modelBuilder);
