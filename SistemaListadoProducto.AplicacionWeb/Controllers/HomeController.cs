@@ -21,7 +21,7 @@ namespace SistemaListadoProducto.AplicacionWeb.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Producto");
         }
 
         public IActionResult Privacy()
