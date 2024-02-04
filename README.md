@@ -29,9 +29,19 @@ Aplicación creada en .NET que consiste en un administrador de productos y categ
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nicolas-gravertt-acevedo/)
 
 
-## Pantallazos
+## Screen Shots
 
-![Alt Text](https://github.com/nicolasgravertt/afex-seleccion-proyect/blob/main/src/assets/index.png?raw=true)
+### Login
+
+![Alt Text](https://raw.githubusercontent.com/nicolasgravertt/Prueba-Tecnica-.NET/master/SistemaListadoProducto.AplicacionWeb/wwwroot/assets/login.png)
+
+### Producto
+
+![Alt Text](https://raw.githubusercontent.com/nicolasgravertt/Prueba-Tecnica-.NET/master/SistemaListadoProducto.AplicacionWeb/wwwroot/assets/administrador_Productos.png)
+
+### Categoria
+
+![Alt Text](https://raw.githubusercontent.com/nicolasgravertt/Prueba-Tecnica-.NET/master/SistemaListadoProducto.AplicacionWeb/wwwroot/assets/administrador_Categoria.png)
 
 
 ## Author
